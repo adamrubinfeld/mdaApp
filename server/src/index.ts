@@ -7,6 +7,6 @@ const app = express();
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => console.log('mongodb read to connect'));
+db.once('open', () => console.log('mongodb as been connected'));
 
 app.listen(3000, () => console.log('server start at 3000'))
