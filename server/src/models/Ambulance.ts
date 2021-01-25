@@ -6,14 +6,13 @@ interface AmbulnaceI {
 
 class Ambulnace extends ModelImpl<AmbulnaceI>{
     
+    ambulance: AmbulnaceI;
 
-    ambulnace: AmbulnaceI;
-
-    constructor(ambulnace: AmbulnaceI){
+    constructor(ambulance: AmbulnaceI){
         super();
-        this.ambulnace = ambulnace;
+        this.ambulance = ambulance;
     }
-
+   
     create(): void {
         throw new Error('Method not implemented.');
     }

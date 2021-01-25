@@ -6,13 +6,13 @@ interface UserI {
 
 class User extends ModelImpl<UserI>{
     
-
     user: UserI;
 
     constructor(user: UserI){
         super();
         this.user = user;
     }
+    
 
     create(): void {
         throw new Error('Method not implemented.');

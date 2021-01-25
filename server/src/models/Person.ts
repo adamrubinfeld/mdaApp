@@ -1,24 +1,24 @@
 import ModelImpl from './ModelImpl';
 
-interface PeopelsI {
+interface PersonI {
 
 }
 
-class Peopels extends ModelImpl<PeopelsI>{
+class Person extends ModelImpl<PersonI>{
     
 
-    Peoples: PeopelsI;
+    person: PersonI;
 
-    constructor(peopels: PeopelsI){
+    constructor(person: PersonI){
         super();
-        this.Peoples = peopels;
+        this.person = person;
     }
 
     create(): void {
         throw new Error('Method not implemented.');
     }
 
-    read(): PeopelsI {
+    read(): PersonI {
         throw new Error('Method not implemented.');
     }
 

@@ -1,12 +1,17 @@
 import express from 'express';
-import mongoose from 'mongoose';
 
-mongoose.connect('mongodb://localhost:2707/test', {useNewUrlParser: true, useUnifiedTopology: true});
+import ambulanceRoute from './routes/AmbulanceRoute';
+//import eventRoute from './routes/EventRoute';
+//import personRoute from './routes/PersonRoute';
+//import userRoute from './routes/UserRoute';
 
 const app = express();
-const db = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => console.log('mongodb as been connected'));
+
+app.use('/ambulance', ambulanceRoute);
+// app.use('/event', eventRoute);
+// app.use('/person', personRoute);
+// app.use('/user', userRoute);
+
 
 app.listen(3000, () => console.log('server start at 3000'))
