@@ -1,32 +1,18 @@
-import ModelImpl from './ModelImpl';
+import mongoose , { Schema, Document } from 'mongoose';
 
-interface UserI {
-
+export interface IUser extends Document {
+    firstName: String, 
+    lastName: String, 
+    _id: Number,
+    password: Number,
+    hours?: Number
 }
 
-class User extends ModelImpl<UserI>{
-    
-    user: UserI;
+const UserSchema = new Schema({
+    firstName: {type: String, required: true},
+    lastName: {type: String, required: true},
+    _id: {type: Number, required: true, unique: true},
+    password: {type: Number, required: true}
+})
 
-    constructor(user: UserI){
-        super();
-        this.user = user;
-    }
-    
-
-    create(): void {
-        throw new Error('Method not implemented.');
-    }
-
-    read(): UserI {
-        throw new Error('Method not implemented.');
-    }
-
-    update(): void {
-        throw new Error('Method not implemented.');
-    }
-
-    delete(): void {
-        throw new Error('Method not implemented.');
-    }
-}
+export default mongoose.model<IUser>('User', UserSchema);
